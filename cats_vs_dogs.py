@@ -148,7 +148,7 @@ def main(_):
     image_shaped_input = tf.reshape(x, [-1, 64, 64, 1])
     tf.summary.image('input', image_shaped_input, 10)
 
-  hidden1 = nn_layer(x, 64*64, 500, 'layer1')
+  hidden1 = nn_layer(x, 64*64, 20, 'layer1')
 
   with tf.name_scope('dropout'):
     keep_prob = tf.placeholder(tf.float32)
@@ -156,7 +156,7 @@ def main(_):
     dropped = tf.nn.dropout(hidden1, keep_prob)
 
   # Do not apply softmax activation yet, see below.
-  y = nn_layer(dropped, 500, 2, 'layer2', act=tf.identity)
+  y = nn_layer(dropped, 20, 2, 'layer2', act=tf.identity)
 
   with tf.name_scope('cross_entropy'):
     diff = tf.nn.softmax_cross_entropy_with_logits(y, y_)
@@ -233,6 +233,7 @@ if __name__ == '__main__':
   print('Default log output dir: %s' % output_dir)
   parser.add_argument('--log_dir', type=str, default=output_dir,
                       help='Summaries log directory')
+  print('Log output dir used: %s' % FLAGS.output_dir)
   FLAGS, unparsed = parser.parse_known_args()
+
   tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
-  # main(None)
