@@ -7,7 +7,7 @@ Using TF Keras to transfer learn + fine-tune a MobileNetV2 model on our own data
 
 We get around 93% accuracy on the test dataset.
 
-[dogcat.ipynb](Ipython notebook training/testing model)
+[Ipython notebook training testing model](dogcat.ipynb)
 
 
 # Old model
