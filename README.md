@@ -9,6 +9,7 @@ We get around 93% accuracy on the test dataset.
 
 [Ipython notebook training testing model](dogcat.ipynb)
 
+![predictions](predictions.png)
 
 # Old model
 
