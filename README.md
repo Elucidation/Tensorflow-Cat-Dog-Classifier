@@ -1,6 +1,17 @@
 Tensorflow Cats vs Dogs classifier
 ---
 
+# Ipython notebook new Mobilenet model
+
+Using TF Keras to transfer learn + fine-tune a MobileNetV2 model on our own dataset of dogs/cats.
+
+We get around 93% accuracy on the test dataset.
+
+[dogcat.ipynb](Ipython notebook training/testing model)
+
+
+# Old model
+
 We build our own dataset from existing flicker images of cats and dogs, and then train a tensorflow neural network to classify cats and dogs.
 
 Run using `./cats_vs_dogs.py`
